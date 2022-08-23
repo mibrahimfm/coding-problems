@@ -3,21 +3,18 @@ class Solution:
       n = len(s)
       largestSubstring = 0
       currentSubstring = 0
-      substring = ""
       charsInSubstring = {}
       for i in range(n):
           c = s[i]
-          indexCharInSubstring = substring.find(c)
-          print(substring, c, indexCharInSubstring)
-          if indexCharInSubstring != -1:
-            substring = substring[indexCharInSubstring+1:]
-            currentSubstring = len(substring)
-          substring += c
+          if c in charsInSubstring:
+            charsInSubstring = {key:value for key, value in charsInSubstring.items() if value > i}
+            currentSubstring = len(charsInSubstring)
+          
+          charsInSubstring[c] = i
           currentSubstring += 1
           if currentSubstring > largestSubstring:
             largestSubstring = currentSubstring
       return largestSubstring
-          
               
 
 print(Solution().lengthOfLongestSubstring('abrkaabcdefghijjxxx'))
