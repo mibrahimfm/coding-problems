@@ -37,3 +37,4 @@ print(str(longestPalindrome("tracecare")))
 # racecar
 print(str(longestPalindrome("abcdefghijklmnopqrstuvwxyz")))
 #a
+print(str(longestPalindrome("forgeeksskeegfor")))
