@@ -24,8 +24,7 @@ def longestPalindrome(s):
             return ss
         
     return ""
-    
-    # Fill this in.
+
         
 # Test program
 
